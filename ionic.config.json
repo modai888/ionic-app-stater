@@ -1,0 +1,15 @@
+{
+ "name": "ionic-app-stater",
+ "app_id": "",
+ "proxies": [
+ ],
+ "gulpStartupTasks": [
+    "default",
+    "watch"
+ ],
+ "watchPatterns": [
+    "src/**/*",
+    "!src/lib/**/*"
+ ],
+ "documentRoot": "src"
+}
