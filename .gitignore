@@ -16,5 +16,8 @@ _*
 src/index.html
 src/css/ionic.app.css
 src/css/ionic.app.min.css
+src/css/maps
 src/js/config/config.js
+src/app/app.config.js
+src/conf/*
 npm-debug.log

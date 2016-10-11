@@ -1,0 +1,57 @@
+<ion-view>
+  <ion-content has-header="false" has-tabs="false" padding="false" scroll="true">
+
+    <form name="vm.form" novalidate="">
+
+      <div class="logo-header vertical-center">
+        <img ui-sref="app.intro" src="img/logo.png"/>
+      </div>
+
+       <div class="list">
+
+        <div class="text-center">
+          <span class="h3 brand-primary" translate>auth.signup-title</span>
+        </div>
+
+        <span class="note item item-borderless" translate="prompt.signup" translate-values="{your: '{{_yr}}'}"></span>
+
+        <label class="item item-input first-field">
+          <i class="icon ion-ios-person-outline placeholder-icon field-icon"></i>
+          <input type="email"
+                 placeholder="Email" translate translate-attr-placeholder="field.email"
+                 ng-model="vm.user.email"
+                 form-field="vm.form.email"
+                 name="email"
+                 required
+                 ng-minlength="5"
+                 ng-maxlength="50">
+        </label>
+
+        <div fus-messages="vm.form.email">
+          <div ng-messages-include="js/app/util/templates/form-errors.html"></div>
+        </div>
+
+        <form-errors/>
+      </div>
+
+      <div class="text-center padding-top">
+        <button class="button button-full button-primary" ng-click="vm.signup(vm.form)"
+                translate>button.signup
+        </button>
+
+        <span class="note padding" translate>prompt.have-an-account</span><span
+          class="link padding" ui-sref="login" translate>link.login</span>
+        <br>
+
+        <div ng-show="vm.canLoginWithTwitter()">
+          <span class="note padding" translate>prompt.login-with-twitter</span>
+          <button name="login" class="button button-full button-primary" ng-click="vm.loginWithTwitter()"
+                  translate>button.login-with-twitter</button>
+        </div>
+      </div>
+
+
+    </form>
+
+  </ion-content>
+</ion-view>

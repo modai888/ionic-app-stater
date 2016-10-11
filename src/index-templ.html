@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+  <!--
+  Customize this policy to fit your own app's needs. For more guidance, see:
+      https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+  Some notes:
+      * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+      * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+      * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        Enable inline JS: add 'unsafe-inline' to default-src
+    http://stackoverflow.com/questions/29814717/getting-error-to-setup-ngcordova-firsttime
+    https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+    http://stackoverflow.com/questions/30212306/no-content-security-policy-meta-tag-found-error-in-my-phonegap-application
+    http://forum.ionicframework.com/t/ionic-google-maps-referenceerror-google-is-not-defined/22550/3
+
+    NOTE: this article uses a different meta-tag:
+        http://www.gajotres.net/using-cordova-geoloacation-api-with-google-maps-in-ionic-framework/
+    NAMELY, as follows:
+        <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *">
+  -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' * data: gap: https://ssl.gstatic.com https://maps.googleapis.com/ https://maps.gstatic.com/ https://mts0.googleapis.com/ 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+  <title></title>
+
+  <!-- NOTE: the build-endbuild tags are used by gulp-htmlreplace - DO NOT REMOVE -->
+  <!-- build:sass -->
+  <link href="css/ionic.app.css" rel="stylesheet">
+  <!-- endbuild -->
+</head>
+
+<!-- NOTE: "ng-strict-di" will be added to the body tag during a production build (see gulp.js) -->
+<body ng-app="app" ng-controller="ApplicationCtrl as main">    <!-- ApplicationCtrl: global/default controller -->
+  <!--
+    The views will be rendered in the <ion-nav-view> directive below
+  -->
+  <ion-nav-view></ion-nav-view>
+  
+  <!--
+      For DEV we can use ionic.bundle.js (non-minified) to debug moduleErr errors, see:
+      http://www.chrisgmyr.com/2014/08/debugging-uncaught-error-injectormodulerr-in-angularjs/
+
+      During a production build, this gets swapped out for the minified version (ionic.bundle.min.js).
+  -->
+  <!-- NOTE: the build-endbuild tags are used by gulp-htmlreplace - DO NOT REMOVE -->
+  <!-- build:ionic -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <!-- endbuild -->
+
+  <!-- Took out the ionic.io libs because of Firebase issues as described here: -->
+
+  <!--    http://forum.ionicframework.com/t/firebase-timeouts-slow-responses/31657/10 -->
+  <!--    http://forum.ionicframework.com/t/ionic-firebase-stuck-loading-forever/31146/12- ->
+
+  <!-- **AND** also removed them because these libs are now obsolete - Ionic.io services should use the new "Ionic -->
+  <!-- Web Client" library - but I'm leaving this out of the starter app in order to keep it lean and not burden -->
+  <!-- with too many dependencies which maybe not everyone needs/wants -->
+
+  <!--<script src="lib/ionic-service-core/ionic-core.js"></script>-->
+  <!--<script src="lib/ionic-service-analytics/ionic-analytics.js"></script>-->
+
+  <!-- Firebase integration, remove this if you don't want Firebase -->
+  <script src="lib/firebase/firebase.js"></script>
+  <script src="lib/angularfire/dist/angularfire.min.js"></script>
+
+  <!-- Form validation with ng-messages and fusion-messages -->
+  <script src="lib/angular-resource/angular-resource.min.js"></script>
+  <script src="lib/angular-messages/angular-messages.min.js"></script>
+  <script src="lib/fus-messages/dist/fus-messages.js"></script>
+
+  <script src="lib/angular-translate/angular-translate.min.js"></script>
+  <script src="lib/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+
+  <script src="lib/ionic-content-banner/dist/ionic.content.banner.min.js"></script>
+
+  <script src="lib/jsSHA/src/sha1.js"></script>
+
+  <script src="js/lib/ng-img-crop-customized/ng-img-crop.min.js"></script>
+
+  <!-- ngCordova - IMPORTANT : SHOULD be after ionic bundle and before cordova.js -->
+  <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+  <!-- Cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+
+  <script src="js/modules.js"></script>
+
+  <!-- UNCOMMENT THE FOLLOWING 4 LINES IF YOU WANT TO USE THE LOGENTRIES SERVICE FOR REMOTE LOGGING -->
+  <!-- AND SUBSTITUTE YOUR LOGENTRIES TOKEN INTO THE "LE.init" CALL: -->
+  <!--<script src="js/lib/logentries/le.min.js"></script>-->
+  <!--<script>-->
+    <!--LE.init({token: 'PASTE-YOUR-LOGENTRIES-TOKEN-HERE', print: false});-->
+  <!--</script>-->
+
+  <!-- NOTE: the build-endbuild tags are used by gulp-htmlreplace - DO NOT REMOVE -->
+  <!-- build:js -->
+
+  <!-- NOTE: the inject-endinject tags are used by gulp-inject - DO NOT REMOVE -->
+  <!-- inject:js -->
+  <!-- endinject -->
+
+  <!-- scripts belonging to the root "app" module are placed here -->
+  <script src="app/app.js"></script>
+  <script src="app/application.ctrl.js"></script>
+  <script src="app/application.service.js"></script>
+  <!-- endbuild -->
+
+
+  <!-- ANGULAR-TEMPLATECACHE -->
+  <script src="app/templates.js"></script>
+  
+</body>
+</html>
