@@ -4,19 +4,19 @@ var sequence = require('gulp-sequence');
 
 var config = require('./gulp/gulp.config');
 
-var CONF = {};
-CONF.DEST = './dist/';
-CONF.JS = {};
-CONF.JS.SRC = ['./src/app/**/*.js'];
-CONF.JS.MIN = 'build.min.js';
-CONF.JS.FAT = 'build.js';
-CONF.ENVIRONMENT = {};
-CONF.ENVIRONMENT.FILE = 'config.js';
-CONF.ENVIRONMENT.DEST = './src/app/config/';
-CONF.ENVIRONMENT.DEV = './conf/config.dev.js';
-CONF.ENVIRONMENT.DEVBUILD = './conf/config.dev.build.js';
-CONF.ENVIRONMENT.PREPROD = './conf/config.preprod.js';
-CONF.ENVIRONMENT.PROD = './conf/config.prod.js';
+// var CONF = {};
+// CONF.DEST = './dist/';
+// CONF.JS = {};
+// CONF.JS.SRC = ['./src/app/**/*.js'];
+// CONF.JS.MIN = 'build.min.js';
+// CONF.JS.FAT = 'build.js';
+// CONF.ENVIRONMENT = {};
+// CONF.ENVIRONMENT.FILE = 'config.js';
+// CONF.ENVIRONMENT.DEST = './src/app/config/';
+// CONF.ENVIRONMENT.DEV = './conf/config.dev.js';
+// CONF.ENVIRONMENT.DEVBUILD = './conf/config.dev.build.js';
+// CONF.ENVIRONMENT.PREPROD = './conf/config.preprod.js';
+// CONF.ENVIRONMENT.PROD = './conf/config.prod.js';
 
 // DEFAULT TASK
 //gulp.task('default', ['serve']);
@@ -51,7 +51,7 @@ CONF.ENVIRONMENT.PROD = './conf/config.prod.js';
 //gulp.task('release', getTask('release'));
 
 // 开发
-gulp.task('serve', sequence('config','watch','ionic-serve'));
+
 gulp.task('watch');
 
 // USED BY IONIC CLI
