@@ -59,7 +59,7 @@ gulp.task('default', function () {
 });
 
 // 由 IONIC CLI 调用，在执行ionic serve命令前，执行以下task
-gulp.task('serve:before', sequence('config:dev', 'sass'));
+gulp.task('serve:before', sequence('config:dev', 'sass', 'inject-index', 'watch'));
 
 // sass
 gulp.task('sass', getTask('sass'));
@@ -70,6 +70,8 @@ gulp.task('config:prod', configTasks['config-prod']);
 
 // injex-index
 gulp.task('inject-index', getTask('inject-index'));
+
+gulp.task('watch', getTask('watch'));
 
 // USED BY IONIC CLI
 gulp.task('install', ['git-check'], getTask('install'));
