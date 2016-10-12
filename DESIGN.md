@@ -553,6 +553,7 @@ Contributions are welcome. For details, see the
 ## 参考
 
 1、[ionic tab](http://www.clearlyinnovative.com/ionic-framework-tabs-go-home-view)<br/>
+2、[Angular auth](http://espeo.eu/blog/authentication-in-angularjs-or-similar-based-application/ ) <br/>
 [Introduction](#introduction)<br>
 [Installation and usage](#installation-and-usage)<br>
 [Gulp file](#gulp-file)<br>
