@@ -1,6 +1,7 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
+bower_components/
 node_modules/
 resources/
 platforms/
@@ -18,6 +19,5 @@ src/css/ionic.app.css
 src/css/ionic.app.min.css
 src/css/maps
 src/js/config/config.js
-src/app/app.config.js
-src/conf/*
+src/app/config/app.config.js
 npm-debug.log

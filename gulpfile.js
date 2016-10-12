@@ -52,17 +52,19 @@ var config = require('./gulp/gulp.config');
 
 // 开发
 
-//gulp.task('watch');
-
 gulp.task('default', function () {
     console.log('default');
 });
 
-// 由 IONIC CLI 调用，在执行ionic serve命令前，执行以下task
-gulp.task('serve:before', sequence('config:dev', 'sass', 'inject-index', 'watch'));
+gulp.task('serve', getTask('ionic-serve'));
+
+// ionic serve hooks
+gulp.task('serve:before', sequence(['config:dev', 'sass'], 'inject-index'));
+gulp.task('serve:after', ['watch']);
 
 // sass
 gulp.task('sass', getTask('sass'));
+
 // config
 var configTasks = getTask('config');
 gulp.task('config:dev', configTasks['config-dev']);

@@ -22,7 +22,7 @@
     "jsSHA": "1.6.0"
   },
   "devDependencies": {
-    "ionic": "driftyco/ionic-bower#1.2.4",
+    "ionic":"driftyco/ionic-bower#master",
     "angular-mocks": "1.4.3"
   }
 }

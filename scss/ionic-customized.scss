@@ -1,3 +1,4 @@
+@charset "UTF-8";
 //
 // NOTE:
 //
@@ -5,9 +6,8 @@
 // version of _action-sheet.scss so that we can include a customized version (see _action-sheet-customized.scss).
 //
 
-@charset "src/lib/ionic/scss/UTF-8";
-
 @import
+
   // Ionicons
   "src/lib/ionic/scss/ionicons/ionicons.scss",
 

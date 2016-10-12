@@ -19,5 +19,5 @@ appModule('app.hooks')
       return $injector.get('AppHooksFirebaseImpl');
     }
   });
-;
+
 }());

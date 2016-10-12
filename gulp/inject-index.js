@@ -7,7 +7,8 @@ module.exports = function (gulp, conf) {
 
     return function () {
         gulp.src(conf.paths.indexTemplate)
-            .pipe(inject(gulp.src(conf.paths.scripts, {read: false}), {relative: true}))
+            .pipe(inject(gulp.src(conf.app.scripts, {read: false}), {relative: true}))
+            .pipe(inject(gulp.src(conf.lib.scripts, {read: false}), {name: 'libjs', relative: true}))
             .pipe(rename(function (path) {
                 path.basename = 'index';
                 path.extname = '.html';

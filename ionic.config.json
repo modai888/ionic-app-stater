@@ -9,7 +9,6 @@
   ],
   "watchPatterns": [
     "src/**/*",
-    "!src/config/**/*",
     "!src/lib/**/*"
   ],
   "documentRoot": "src"
