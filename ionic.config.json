@@ -9,8 +9,8 @@
     ],
     "watchPatterns": [
         "src/**/*",
-        "!src/**/*.map",
-        "!src/config/*.json",
+        "!src/maps/*.map",
+        "!src/app/config/*.json",
         "!src/index-*.html",
         "!src/lib/**/*"
     ],

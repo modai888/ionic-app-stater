@@ -4,6 +4,7 @@ var sass = require('gulp-sass');
 var sourcemap = require('gulp-sourcemaps');
 var del = require('del');
 var rename = require('gulp-rename');
+var cleanCss = require('gulp-clean-css');
 var gif = require('gulp-if');
 var argv = require('yargs').argv;
 
@@ -25,10 +26,13 @@ module.exports = function (gulp, conf) {
                 //console.log(err.toString());
                 this.emit("end");
             })
+            .pipe(gif(!dev, cleanCss({
+                keepSpecialComments: 0
+            })))
             .pipe(gif(map, sourcemap.write('../maps')))
             .pipe(rename(function (path) {
                 if (path.extname !== '.map') {
-                    path.basename = 'ionic.app';
+                    path.basename = dev ? 'ionic.app' : 'ionic.app.min';
                     path.extname = '.css'
                 }
                 return path;

@@ -58,10 +58,6 @@ gulp.task('default', function () {
 
 gulp.task('serve', getTask('ionic-serve'));
 
-// config
-// var configTasks = getTask('config');
-// gulp.task('config:dev', configTasks['config-dev']);
-// gulp.task('config:prod', configTasks['config-prod']);
 /**
  * 生成app配置信息
  * app配置定义在src/app/config/*.json文件中
@@ -79,14 +75,27 @@ var sassTasks = getTask('sass');
 gulp.task('sass.dev', sassTasks.dev);
 gulp.task('sass.prod', sassTasks.prod);
 
+// image
+gulp.task('image', getTask('image'));
+
 // injex-index
-//gulp.task('inject-index', getTask('inject-index'));
+gulp.task('inject-index', getTask('inject-index'));
 
 // build
-gulp.task('build', sequence(['config:dev', 'sass'], 'inject-index', 'clean', function () {
-    return gulp.src(['./src/**/*', '!./src/index-templ.html', '!./src/index-template.html'])
-        .pipe(gulp.dest(config.paths.dest));
-}));
+gulp.task('build', ['config.dev.js', 'sass.dev', 'inject-index', 'clean'], function (done) {
+    sequence('image', function () {
+        gulp.src([
+            './src/**/*',
+            '!./src/img/**/*',
+            '!./src/app/config/*.json',
+            '!./src/index-templ.html',
+            '!./src/index-template.html'
+        ])
+            .pipe(gulp.dest(config.paths.dest));
+        done();
+    });
+
+});
 
 
 // clean
@@ -95,7 +104,7 @@ gulp.task('clean', getTask('clean'));
 gulp.task('watch', getTask('watch'));
 
 // USED BY IONIC CLI
-gulp.task('serve:before', ['default']);
+gulp.task('serve:before', ['config.dev.js', 'sass.dev', 'inject-index']);
 gulp.task('serve:after', ['watch']);
 gulp.task('emulate:after', ['default']);
 gulp.task('emulate:after', ['default']);
