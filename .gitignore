@@ -6,7 +6,6 @@ node_modules/
 resources/
 platforms/
 plugins/
-src/lib/
 
 _*
 .DS_STORE
@@ -17,7 +16,7 @@ _*
 src/index.html
 src/css/ionic.app.css
 src/css/ionic.app.min.css
-src/css/maps
 src/js/config/config.js
 src/app/config/app.config.js
+src/maps/
 npm-debug.log

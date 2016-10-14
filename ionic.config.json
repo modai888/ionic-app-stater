@@ -9,7 +9,9 @@
     ],
     "watchPatterns": [
         "src/**/*",
-        "!src/index-templ.html",
+        "!src/**/*.map",
+        "!src/config/*.json",
+        "!src/index-*.html",
         "!src/lib/**/*"
     ],
     "documentRoot": "src"

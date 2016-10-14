@@ -58,20 +58,29 @@ gulp.task('default', function () {
 
 gulp.task('serve', getTask('ionic-serve'));
 
-// ionic serve hooks
-gulp.task('serve:before', sequence(['config:dev', 'sass'], 'inject-index'));
-gulp.task('serve:after', ['watch']);
+// config
+// var configTasks = getTask('config');
+// gulp.task('config:dev', configTasks['config-dev']);
+// gulp.task('config:prod', configTasks['config-prod']);
+/**
+ * 生成app配置信息
+ * app配置定义在src/app/config/*.json文件中
+ * config.base.json是通用配置，即不区分开发或生成环境
+ * config.dev.json是开发环境下的配置信息
+ * config.prod.json是生成环境下的配置信息
+ *
+ * */
+var configTasks = getTask('config');
+gulp.task('config.dev.js', configTasks.dev);
+gulp.task('config.prod.js', configTasks.prod);
 
 // sass
-gulp.task('sass', getTask('sass'));
-
-// config
-var configTasks = getTask('config');
-gulp.task('config:dev', configTasks['config-dev']);
-gulp.task('config:prod', configTasks['config-prod']);
+var sassTasks = getTask('sass');
+gulp.task('sass.dev', sassTasks.dev);
+gulp.task('sass.prod', sassTasks.prod);
 
 // injex-index
-gulp.task('inject-index', getTask('inject-index'));
+//gulp.task('inject-index', getTask('inject-index'));
 
 // build
 gulp.task('build', sequence(['config:dev', 'sass'], 'inject-index', 'clean', function () {
@@ -79,15 +88,21 @@ gulp.task('build', sequence(['config:dev', 'sass'], 'inject-index', 'clean', fun
         .pipe(gulp.dest(config.paths.dest));
 }));
 
+
 // clean
 gulp.task('clean', getTask('clean'));
 
 gulp.task('watch', getTask('watch'));
 
 // USED BY IONIC CLI
+gulp.task('serve:before', ['default']);
+gulp.task('serve:after', ['watch']);
+gulp.task('emulate:after', ['default']);
+gulp.task('emulate:after', ['default']);
 gulp.task('install', ['git-check'], getTask('install'));
 gulp.task('git-check', getTask('git-check'));
 
 function getTask(task) {
     return require('./gulp/' + task)(gulp, config);
 }
+

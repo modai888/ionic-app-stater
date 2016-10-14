@@ -11,7 +11,7 @@ module.exports = function (gulp, conf) {
             .pipe(extend('config.json', true))
             .pipe(ngConstant({
                 deps: false,
-                wrap: true,
+                wrap: true, //包装方式，有es6／common／amd／IIFE，设置为true时，使用IIFE
                 indent:'    '
             }))
             .pipe(rename(function (path) {
@@ -22,10 +22,10 @@ module.exports = function (gulp, conf) {
     };
 
     return {
-        "config-dev": function () {
+        "dev": function () {
             return configService(conf.config.devSrc, conf.config.dest);
         },
-        "config-prod": function () {
+        "prod": function () {
             return configService(conf.config.prodSrc, conf.config.dest);
         }
     };

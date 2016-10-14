@@ -550,6 +550,31 @@ production setup, and in test mode, the mock implementations makes running your 
 Contributions are welcome. For details, see the
 [Contributing](https://github.com/leob/ionic-quickstarter/wiki/Contributing) section on the Wiki.
 
+## IONIC CLI 2.x 
+
+IONIC CLI命令行程序为基于IONIC框架开发混合APP的提供了快速方便的命令工具。
+
+### 配置文件
+IONIC CLI 2.x使用的配置文件命名为ionic.config.json，位于项目根目录下。
+
+常用配置项说明：
+
+* proxies： 配置应用代理，用于解决开发阶段的CORS问题。
+```
+    proxies:{
+        proxyUrl : '',
+        path : '',
+        proxyNoAgent : '',
+        rejectUnauthorized : '' // 默认为true
+    }
+```
+* defaultBrowser : 默认启动的浏览器，如'firefox'，'chrome'，'safari'
+* sass : 是否监控sass,默认为false
+* watchPatterns
+* documentRoot
+* createDocumentRoot
+
+
 ## 参考
 
 1、[ionic tab](http://www.clearlyinnovative.com/ionic-framework-tabs-go-home-view)<br/>
