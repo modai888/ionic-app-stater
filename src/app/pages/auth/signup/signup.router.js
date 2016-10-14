@@ -6,7 +6,7 @@ appModule('app.auth.signup')
     $stateProvider
       .state('signup', {
         url: '/signup',
-        templateUrl: 'js/app/auth/signup/signup.html',
+        templateUrl: 'app/pages/auth/signup/signup.html',
         controller: 'SignupCtrl as vm'
       });
   });

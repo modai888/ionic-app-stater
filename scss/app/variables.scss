@@ -19,7 +19,13 @@ $dark:                            #444 !default;
 
 // DEFINITION OF THEMEABLE PRIMARY AND SECONDARY 'BRAND' COLORS
 
-$positive:                          #4a87ee !default;
+// 主题颜色
+$primary: #ffc900;
+
+$page-content-bg : #f8f8f8;
+
+//$positive:                          #4a87ee !default;
+$positive:                          #f0f0f0 !default;
 
 // The primary 'brand' color
 $brand-primary:                           $positive !default;
@@ -59,6 +65,13 @@ $bar-primary-border:                $button-primary-border !default;
 $bar-primary-active-bg:             $button-primary-active-bg !default;
 $bar-primary-active-border:         $button-primary-active-border !default;
 
+// transparent bar
+$bar-transparency-bg:                    rgba($button-primary-bg, 0) !default;
+$bar-transparency-text:                  $button-primary-text !default;
+$bar-transparency-border:                $bar-transparency-bg !default;
+$bar-transparency-active-bg:             $button-primary-active-bg !default;
+$bar-transparency-active-border:         $bar-transparency-bg !default;
+
 $button-secondary-bg:                 $brand-secondary !default;
 $button-secondary-text:               #fff !default;
 $button-secondary-border:             darken($brand-secondary, 8%) !default;
@@ -81,15 +94,16 @@ $button-neutral-active-border:      darken($neutral, 8%) !default;
 
 // customize the height etc here
 //$tabs-height:                     49px !default;
-$tabs-height:                     40px !default;
+//$tabs-height:                     49px !default;
 //$tabs-text-font-size:             14px !default;
 //$tabs-text-font-size-side-icon:   10px !default;
 //$tabs-icon-size:                  32px !default;
 //$tabs-badge-padding:              1px 6px !default;
 //$tabs-badge-font-size:            12px !default;
 
-$tabs-brand:                         $brand-secondary !default;
+$tabs-brand:                         $primary !default;
 $tabs-brand-bg:                      $button-secondary-bg !default;
 $tabs-brand-border:                  $button-secondary-border !default;
-$tabs-brand-text:                    $button-secondary-text !default;
+$tabs-brand-text:                    $dark !default;
 $bar-brand-border:                   $bar-secondary-border !default;
+$bar-brand-active-font-weight: 600;

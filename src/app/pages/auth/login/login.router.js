@@ -6,12 +6,12 @@ appModule('app.auth.login')
     $stateProvider
       .state('login', {
         url: '/login',
-        templateUrl: 'js/app/auth/login/login.html',
+        templateUrl: 'app/pages/auth/login/login.html',
         controller: 'LoginCtrl as vm'
       })
       .state('loggedout', {
         url: '/loggedout',
-        templateUrl: 'js/app/auth/login/loggedout.html',
+        templateUrl: 'app/pages/auth/login/loggedout.html',
         controller: 'LogoutCtrl as vm'
       });
   });

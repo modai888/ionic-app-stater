@@ -9,7 +9,7 @@
             $ionicConfigProvider.backButton.previousTitleText(false).text('&emsp;&emsp;');
 
             // NOTE: we put the tabs at the top for both Android and iOS
-            $ionicConfigProvider.tabs.position("top");
+            $ionicConfigProvider.tabs.position("bottom");
 
             //$ionicConfigProvider.navBar.alignTitle('center');
             //
@@ -32,7 +32,7 @@
         .config(function ($translateProvider) {
             $translateProvider
                 .useStaticFilesLoader({
-                    prefix: 'js/locales/',
+                    prefix: 'app/locales/',
                     suffix: '.json'
                 })
                 .registerAvailableLanguageKeys(['en'], {

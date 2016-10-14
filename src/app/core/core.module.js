@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('app.core', [
-        'ionic',
+        'gs.ionic',
         'ngCordova',
         "firebase",
         // form-validation

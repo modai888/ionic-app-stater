@@ -8,7 +8,7 @@
       scope: {
         img: '@'
       },
-      templateUrl: 'js/app/intro/intro-header.html'
+      templateUrl: 'app/pages/intro/intro-header.html'
     });
   };
 

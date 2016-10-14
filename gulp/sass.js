@@ -20,7 +20,11 @@ module.exports = function (gulp, conf) {
                 //console.log(err.toString());
                 this.emit("end");
             })
-            .pipe(sourcemap.write('./maps'))
+            .pipe(sourcemap.write('./maps', {
+                sourceMappingURL: function (file) {
+                    return 'maps/' + file.relative;
+                }
+            }))
             .pipe(rename({
                 basename: 'ionic.app',
                 extname: '.css'

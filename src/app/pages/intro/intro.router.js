@@ -8,7 +8,7 @@ appModule('app.intro')
         url: '/intro',
         views: {
           'menuContent@app': {
-            templateUrl: 'js/app/intro/intro.html',
+            templateUrl: 'app/pages/intro/intro.html',
             controller: 'IntroCtrl as vm'
           }
         }

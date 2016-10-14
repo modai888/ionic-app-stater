@@ -8,9 +8,31 @@
             $stateProvider
                 .state('app', {
                     url: "/app",
-                    abstract: true,
-                    templateUrl: "js/app/menu/menu.html"
+                    // abstract: true,
+                    // templateUrl: "app/pages/menu/menu.html"
+                    template: "<ion-nav-view name='menuContent'></ion-nav-view>"
                 })
+
+                .state('app.home', {
+                    url: '/home',
+                    views: {
+                        'menuContent@app': {
+                            templateUrl:'app/pages/home/shell.html',
+                            controller:'HomeController as vm'
+                        }
+                    }
+                })
+
+                .state('app.task', {
+                    url: '/task/:id',
+                    views: {
+                        'menuContent@app': {
+                            templateUrl: 'app/pages/tasks/task.html',
+                            controller: 'TaskController as vm'
+                        }
+                    }
+                })
+
 
                 .state('app.auth', {
                     url: "/auth",

@@ -9,7 +9,7 @@ appModule('app.mainPage')
         abstract: true,
         views: {
           'menuContent@app': {
-            templateUrl: "js/app/mainPage/tabs.html"
+            templateUrl: "app/pages/mainPage/tabs.html"
           }
         }
       })
@@ -18,7 +18,7 @@ appModule('app.mainPage')
         url: '/dash',
         views: {
           'main-dash': {
-            templateUrl: 'js/app/mainPage/dash.html',
+            templateUrl: 'app/pages/mainPage/dash.html',
             controller: 'DashCtrl as vm'
           }
         }
@@ -27,7 +27,7 @@ appModule('app.mainPage')
         url: '/chats',
         views: {
           'main-chats': {
-            templateUrl: 'js/app/mainPage/chats.html',
+            templateUrl: 'app/pages/mainPage/chats.html',
             controller: 'ChatsCtrl as vm'
           }
         }
@@ -36,7 +36,7 @@ appModule('app.mainPage')
         url: '/chats/:chatId',
         views: {
           'main-chats': {
-            templateUrl: 'js/app/mainPage/chatDetail.html',
+            templateUrl: 'app/pages/mainPage/chatDetail.html',
             controller: 'ChatDetailCtrl as vm'
           }
         }
@@ -45,7 +45,7 @@ appModule('app.mainPage')
         url: '/account',
         views: {
           'main-account': {
-            templateUrl: 'js/app/mainPage/account.html',
+            templateUrl: 'app/pages/mainPage/account.html',
             controller: 'AccountCtrl as vm'
           }
         }

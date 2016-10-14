@@ -11,6 +11,7 @@ conf.paths = {
 // app
 conf.app = {
     scripts: [
+        './src/shared/**/*.js',
         './src/app/**/*.module.js',
         './src/app/**/*.js',
         '!./src/app/app.js',

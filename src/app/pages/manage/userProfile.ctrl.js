@@ -257,7 +257,7 @@
       return deferred.promise;
     }
 
-    $ionicModal.fromTemplateUrl('js/app/manage/image-crop-modal.html', {scope: $scope, animation: 'slide-in-up'})
+    $ionicModal.fromTemplateUrl('app/pages/manage/image-crop-modal.html', {scope: $scope, animation: 'slide-in-up'})
       .then(function(modal) {
 
         vm.imageCropModal = modal;
@@ -392,7 +392,7 @@
           url: '/userProfile',
           views: {
             'menuContent@app': {
-              templateUrl: 'js/app/manage/userProfile.html',
+              templateUrl: 'app/pages/manage/userProfile.html',
               controller: 'UserProfileCtrl as vm'
             }
           }

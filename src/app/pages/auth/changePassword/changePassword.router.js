@@ -6,7 +6,7 @@ appModule('app.auth.changePassword')
     $stateProvider
       .state('changePassword', {
         url: '/changePassword?mode',
-        templateUrl: 'js/app/auth/changePassword/changePassword.html',
+        templateUrl: 'app/pages/auth/changePassword/changePassword.html',
         controller: 'ChangePasswordCtrl as vm'
       });
   });

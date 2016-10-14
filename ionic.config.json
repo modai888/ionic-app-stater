@@ -1,15 +1,16 @@
 {
-  "name": "ionic-app-stater",
-  "app_id": "",
-  "proxies": [
-  ],
-  "gulpStartupTasks": [
-    "serve:before",
-    "watch"
-  ],
-  "watchPatterns": [
-    "src/**/*",
-    "!src/lib/**/*"
-  ],
-  "documentRoot": "src"
+    "name": "ionic-app-stater",
+    "app_id": "",
+    "proxies": [
+    ],
+    "gulpStartupTasks": [
+        "serve:before",
+        "watch"
+    ],
+    "watchPatterns": [
+        "src/**/*",
+        "!src/index-templ.html",
+        "!src/lib/**/*"
+    ],
+    "documentRoot": "src"
 }

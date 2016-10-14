@@ -1,0 +1,29 @@
+<ion-view view-title="shell">
+    <ion-nav-bar class="bar-positive">
+        <ion-nav-buttons side="right">
+            <button class="button button-icon button-clear ion-ios-gear-outline" ng-click="main.goUserProfile()">
+            </button>
+        </ion-nav-buttons>
+
+        <ion-nav-back-button nav-clear>
+            <!--Back-->
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-tabs class="tabs-background-brand tabs-color-light">
+        <ion-tab title="任务广场" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong">
+            <div>
+                <ng-include src="'app/pages/tasks/tasks.html'"></ng-include>
+            </div>
+        </ion-tab>
+
+        <ion-tab title="积分商城" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes">
+            <div>
+                <ng-include src="'app/pages/mall/mall.html'"></ng-include>
+            </div>
+        </ion-tab>
+
+        <ion-tab title="个人中心" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear">
+            <div>333</div>
+        </ion-tab>
+    </ion-tabs>
+</ion-view>

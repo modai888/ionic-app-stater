@@ -15,6 +15,8 @@ module.exports = function (gulp, conf) {
                 gulp.start('inject-index');
             }
         });
+        // 监控配置文件
+        gulp.watch('./src/app/config/*.json',['config:dev']);
         done();
     }
 };

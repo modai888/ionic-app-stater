@@ -1,0 +1,46 @@
+// 广告位高度
+$ad-placeholder-height: 200px;
+// 任务列表内容区域顶部偏移
+$tasks-content-top: $ad-placeholder-height;
+
+.corpus-tasks {
+    .ion-ios-help {
+        &:before {
+            color: rgba(0, 0, 0, 0.5) !important;
+            font-size: 20px !important;
+        }
+    }
+    .ad-placeholder {
+        position: relative;
+        height: $ad-placeholder-height;
+        background-color: $primary;
+
+        > .slider {
+            height: 100%;
+
+            > .slider-slides {
+                height: 100% !important;
+
+                > .slider-slide {
+                    height: 100% !important;
+                    background-color: $primary;
+                    padding: 0;
+                }
+            }
+        }
+        img{
+            width: 100%;
+            height: $ad-placeholder-height;
+        }
+    }
+
+    .corpus-tasks-content {
+        padding: 15px;
+        top: $tasks-content-top !important;
+        background-color: $page-content-bg;
+    }
+
+    .corpus-tasks-list {
+
+    }
+}

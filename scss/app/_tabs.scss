@@ -2,10 +2,14 @@
     Tab styles
 */
 
+$tabs-brand-height: 64px;
+
 .tabs-brand > .tabs,
 .tabs.tabs-brand {
     @include tab-style($tabs-brand-bg, $tabs-brand-border, $tabs-brand-text);
     @include tab-badge-style($tabs-brand-text, $tabs-brand-bg);
+    height: $tabs-brand-height;
+    padding-top: 9px;
 }
 
 .tabs-striped {
@@ -22,12 +26,14 @@ ion-tabs {
     @include tabs-standard-color('tabs-color-active-brand', $tabs-brand, $dark);
 }
 
+
 .tab-item.tab-item-active,
 .tab-item.active,
 .tab-item.activated {
     opacity: 1;
 
     &.tab-item-brand {
+        font-weight: $bar-brand-active-font-weight;
         color: $tabs-brand;
     }
 }

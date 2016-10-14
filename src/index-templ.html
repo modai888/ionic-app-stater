@@ -50,7 +50,13 @@
 
 <!-- NOTE: the build-endbuild tags are used by gulp-htmlreplace - DO NOT REMOVE -->
 <!-- build:ionic -->
-<script src="lib/ionic/js/ionic.bundle.js"></script>
+<!--<script src="lib/ionic/js/ionic.bundle.js"></script>-->
+<script src="lib/ionic/js/ionic.js"></script>
+<script src="lib/ionic/js/angular.js"></script>
+<script src="lib/ionic/js/angular-animate.js"></script>
+<script src="lib/ionic/js/angular-sanitize.js"></script>
+<script src="lib/ionic/js/angular-ui-router.js"></script>
+<script src="lib/ionic/js/ionic-angular.js"></script>
 <!-- endbuild -->
 
 <!-- Took out the ionic.io libs because of Firebase issues as described here: -->
@@ -77,7 +83,7 @@
 <!-- Cordova script (this will be a 404 during development) -->
 <script src="cordova.js"></script>
 
-<script src="js/modules.js"></script>
+<script src="app/modules.js"></script>
 
 <!-- UNCOMMENT THE FOLLOWING 4 LINES IF YOU WANT TO USE THE LOGENTRIES SERVICE FOR REMOTE LOGGING -->
 <!-- AND SUBSTITUTE YOUR LOGENTRIES TOKEN INTO THE "LE.init" CALL: -->

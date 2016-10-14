@@ -54,7 +54,7 @@ appModule('app.auth.forgotPassword')
     $stateProvider
       .state('forgotPassword', {
         url: '/forgotPassword',
-        templateUrl: 'js/app/auth/forgotPassword/forgotPassword.html',
+        templateUrl: 'app/pages/auth/forgotPassword/forgotPassword.html',
         controller: 'ForgotPasswordCtrl as vm'
       });
   })

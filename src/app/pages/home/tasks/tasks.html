@@ -1,0 +1,46 @@
+<ion-pane view-title="tasks" class="corpus-tasks" cache-view="true" hide-nav-bar="true">
+    <ion-header-bar align-title="center" class="bar-transparent">
+        <div class="buttons">
+        </div>
+        <h1 class="title"></h1>
+        <div class="buttons">
+            <button class="button button-icon button-clear ion-ios-help" ng-click="">
+            </button>
+        </div>
+    </ion-header-bar>
+
+    <ion-pane>
+        <div class="ad-placeholder">
+            <ion-slide-box on-slide-changed="slideHasChanged($index)">
+                <ion-slide>
+                    <img ng-src="img/slide1.jpg" />
+                </ion-slide>
+                <ion-slide>
+                    <img ng-src="img/slide2.jpg" />
+                </ion-slide>
+                <ion-slide>
+                    <img ng-src="img/slide3.jpg" />
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+        <ion-content class="corpus-tasks-content">
+            <ion-list class="corpus-tasks-list">
+                <!-- "track by": http://www.codelord.net/2014/04/15/improving-ng-repeat-performance-with-track-by -->
+                <ion-item class="item-remove-animate item-avatar item-icon-right"
+                          ng-repeat="chat in vm.chats track by chat.id"
+                          type="item-text-wrap" href="#/app/task/{{chat.id}}">
+
+                    <img ng-src="{{chat.face}}">
+                    <h2>{{chat.name}}</h2>
+                    <p>{{chat.lastText}}</p>
+                    <i class="icon ion-chevron-right icon-accessory"></i>
+
+                    <ion-option-button class="button-assertive" ng-click="vm.remove(chat)">
+                        Delete
+                    </ion-option-button>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-pane>
+
+</ion-pane>

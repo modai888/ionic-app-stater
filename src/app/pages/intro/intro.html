@@ -1,9 +1,9 @@
 <ion-view view-title="{{:: 'intro.title' | translate }}">
 
-  <ion-nav-buttons side="left">
-    <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-    </button>
-  </ion-nav-buttons>
+  <!--<ion-nav-buttons side="left">-->
+    <!--<button class="button button-icon button-clear ion-navicon" menu-toggle="left">-->
+    <!--</button>-->
+  <!--</ion-nav-buttons>-->
 
   <ion-content class="scroll-content" has-header="true" padding="false" scroll="true">
     <ion-slide-box class="intro-slide-box" on-slide-changed="vm.slideChanged(index)">
@@ -22,7 +22,7 @@
               <span translate="intro.slide-1.text2"></span>
             </p>
 
-            <ng-include src="'js/app/intro/nav-buttons.html'"></ng-include>
+            <ng-include src="'app/pages/intro/nav-buttons.html'"></ng-include>
           </div>
 
         </ion-content>
@@ -46,7 +46,7 @@
               - <span translate="intro.slide-2.text2c"></span>
             </p>
 
-            <ng-include src="'js/app/intro/nav-buttons.html'"></ng-include>
+            <ng-include src="'app/pages/intro/nav-buttons.html'"></ng-include>
           </div>
 
         </ion-content>
@@ -63,7 +63,7 @@
               <span translate="intro.slide-3.text1"></span>
             </p>
 
-            <ng-include src="'js/app/intro/nav-buttons.html'"></ng-include>
+            <ng-include src="'app/pages/intro/nav-buttons.html'"></ng-include>
           </div>
 
         </ion-content>

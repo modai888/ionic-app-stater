@@ -2,7 +2,7 @@
   "name": "app.config",
   "constants": {
     "APP": {
-      "routerDefaultState": "app.auth.main.dash"
+      "routerDefaultState": "app.home"
     },
     "FirebaseConfiguration": {
       "url": "https://your-firebase-app.firebaseio.com",

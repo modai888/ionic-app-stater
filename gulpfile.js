@@ -73,6 +73,15 @@ gulp.task('config:prod', configTasks['config-prod']);
 // injex-index
 gulp.task('inject-index', getTask('inject-index'));
 
+// build
+gulp.task('build', sequence(['config:dev', 'sass'], 'inject-index', 'clean', function () {
+    return gulp.src(['./src/**/*', '!./src/index-templ.html', '!./src/index-template.html'])
+        .pipe(gulp.dest(config.paths.dest));
+}));
+
+// clean
+gulp.task('clean', getTask('clean'));
+
 gulp.task('watch', getTask('watch'));
 
 // USED BY IONIC CLI
